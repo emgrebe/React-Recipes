@@ -8,6 +8,7 @@ const App =() => {
   const API_KEY = process.env.REACT_APP_API_KEY;
 
   const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     getRecipes();
@@ -19,14 +20,20 @@ const App =() => {
     setRecipes(data.hits);
   };
 
+  const updateSearch = e => {
+    setSearch(e.target.value);
+    console.log(search);
+  }
+
   return(
     <div className="App">
       <form className="Search-Form">
-        <input type="text"></input>
+        <input type="text" value={search} onChange={updateSearch}></input>
         <button type="submit">Get Recipe</button>
       </form>
       {recipes.map(recipe =>(
         <Recipes 
+          key={recipe.recipe.label}
           title={recipe.recipe.label}
           calories={recipe.recipe.calories}
           image={recipe.recipe.image}
