@@ -1,3 +1,11 @@
+Technologies: ReactJS, Javascript, CSS, HTML
+
+This app was a fun little exercise for using APIs in React. I made a Recipe Search App that pulls recipes from the Edamam API, including the pictures and calories for each!
+
+![](https://i.imgur.com/KHBq7xA.png)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
